@@ -27,7 +27,7 @@ namespace DataAccess
         {
             MemberObject member = null;
             IDataReader dataReader = null;
-            string sql=" SELECT MemberID"
+            string sql = " SELECT MemberID";
             return member;
         }
     }
