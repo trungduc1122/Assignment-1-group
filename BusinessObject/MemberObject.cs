@@ -9,7 +9,10 @@
         public string City { get; set; }
         public string Country { get; set; }
 
-        
+        public MemberObject()
+        {
+
+        }
         public MemberObject(string memberID, string password, string memberName, string email, string city, string country)
         {
             MemberID = memberID;
