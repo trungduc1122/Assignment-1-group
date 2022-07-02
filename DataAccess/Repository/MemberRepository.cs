@@ -7,12 +7,16 @@ using BusinessObject;
 
 namespace DataAccess.Repository
 {
-    public class MemberRepository:IMemberRepository
+    public class MemberRepository : IMemberRepository
     {
-        public MemberObject GetMember(string MemberId) => MemberDAO.Instance.GetMember(MemberId);
-        public IEnumerable<MemberObject> GetCars() => MemberDAO.Instance.GetAllMembers;
-        public void Addnew(MemberObject member) => MemberDAO.Instance.AddNew(member);
-        public void Delete(int MemberId) => MemberDAO.Instance.Remove(MemberId);
-        public void Update(MemberObject member) => MemberDAO.Instance.Update(member);
+        public void addMember(MemberObject member)=>MemberDAO.Instance.AddNew(member);
+
+        public void deleteMember(MemberObject member) => MemberDAO.Instance.Remove(member);
+
+        public List<MemberObject> GetAllMembers() => MemberDAO.Instance.GetAllMembers();
+
+        public MemberObject GetMember(string id) => MemberDAO.Instance.GetMember(id);
+
+        public void updateMember(MemberObject member) => MemberDAO.Instance.Update(member);
     }
 }

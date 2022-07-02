@@ -9,11 +9,11 @@ namespace DataAccess.Repository
 {
     public interface IMemberRepository
     {
-        IEnumerable<MemberObject> GetAllMembers();
-        IEnumerable<MemberObject> GetMember(String id);
+        List<MemberObject> GetAllMembers();
+        MemberObject GetMember(String id);
         public void addMember(MemberObject member);
         public void updateMember(MemberObject member);
-        public void deleteMember(String id);
+        public void deleteMember(MemberObject member);
 
     }
 }

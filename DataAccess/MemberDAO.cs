@@ -11,8 +11,8 @@ namespace DataAccess
             new MemberObject { MemberID = "SE10000", Password = "abcxyz123", MemberName = "Mmmmmmmm",
                                Email = "vnj@gmail.com", City = "HCM", Country = "country" }
         };
-        private static MemberDAO instance=null;
-        private static readonly object instanceLock=null;
+        private static MemberDAO instance = null;
+        private static readonly object instanceLock = null;
         public static MemberDAO Instance
         {
             get
@@ -28,7 +28,10 @@ namespace DataAccess
             }
         }
 
-        public List<MemberObject> GetAllMembers => MemberList;
+        public List<MemberObject> GetAllMembers()
+        {
+            return MemberList;
+        }
         public MemberObject GetMember(string id)
         {
             {
@@ -63,9 +66,9 @@ namespace DataAccess
                 throw new Exception("Member does not already exists.");
             }
         }
-        public void Remove(int memberID)
+        public void Remove(MemberObject member)
         {
-            MemberObject p = GetMember(memberID.memberID);
+            MemberObject p = GetMember(member.MemberID);
             if (p != null)
             {
                 MemberList.Remove(p);
@@ -75,4 +78,6 @@ namespace DataAccess
                 throw new Exception("Member does not already exists.");
             }
         }
+
+    }
 }
