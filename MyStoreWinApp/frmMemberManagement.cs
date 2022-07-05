@@ -16,5 +16,31 @@ namespace MyStoreWinApp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMemberManagement_Load(object sender, EventArgs e)
+        {
+            button3.Enabled = false;
+            dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+        }
+
+        private void DataGridView1_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
